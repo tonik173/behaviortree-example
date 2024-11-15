@@ -22,12 +22,15 @@ If this works, the `Terminator` terminal app launches.
 ### Compile examples (within docker)
 
 ```sh
-cd behavior-tree-cpp/<demo>  # change directory to demo, where demo is the name of the example
+# change directory to demo, where demo is the name of the example
+cd behavior-tree-cpp/<demo>  
 mkdir build
-cmake -S ./src -B ./build    # On WSL, I had to run this the first time with <sudo>. Someone knows how to fix this?
+# On WSL, I had to run the cmake command the first time with <sudo>. Someone knows how to fix this?
+cmake -S ./src -B ./build    
 cd build
 make
-./<demo> [path_to_tree.xml]  # execute demo, where demo is the name of the example
+# execute demo, where demo is the name of the example
+./<demo> [path_to_tree.xml]  
 ```
 
 ### Playing with the BehaviorTree.CPP examples
