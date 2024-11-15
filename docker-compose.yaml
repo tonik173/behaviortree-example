@@ -1,0 +1,23 @@
+services:
+
+  btcpp-env:
+    build: 
+      context: .
+      args:
+          USERNAME: "${BTUSERNAME}"
+          USERID: "${BTUSERID}"
+          GROUPID: "${BTGROUPID}"
+    container_name: btcpp-env
+    user: ${BTUSERID}:${BTGROUPID}
+    environment:
+      - "DISPLAY"
+    env_file:
+      - .env
+    volumes:
+      - $HOST_ROOT_PATH:/home/${BTUSERNAME}/behavior-tree-cpp/
+      - /tmp/.X11-unix:/tmp/.X11-unix:rw
+    tty: true
+    network_mode: host
+    ipc: host
+    extra_hosts:
+      - "host.docker.internal:host-gateway"

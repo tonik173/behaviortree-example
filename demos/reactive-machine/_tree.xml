@@ -1,0 +1,61 @@
+<root BTCPP_format="4">
+    <BehaviorTree ID="MainTree">
+
+        <ReactiveSequence>
+            <ReactiveFallback name="Check machine state">
+                <IsMachineReady/>
+                <FixIssue/>
+            </ReactiveFallback>
+
+            <ReactiveSequence name="Cut and strip">
+                <ReactiveFallback name="Wire loading">
+                    <IsWireLoaded/>
+                    <SubTree ID="WireLoader" slot="{slot}"/>
+                </ReactiveFallback>
+
+                <ReactiveFallback name="Wire drawing">
+                    <IsWireDrawn/>
+                    <DrawWire slot="{slot}"/>
+                </ReactiveFallback>
+
+                <ReactiveFallback name="Wire cutting">
+                    <IsWireCut/>
+                    <SubTree ID="WireCutter"/>
+                </ReactiveFallback>
+
+                <ReactiveFallback name="Strip wire end">
+                    <IsWireEndStripped/>
+                    <Repeat num_cycles="2" name="Single leadset">
+                        <StripWireEnd/>
+                    </Repeat>
+                </ReactiveFallback>
+           </ReactiveSequence>
+        </ReactiveSequence>
+
+    </BehaviorTree>
+
+    <BehaviorTree ID="WireLoader">
+        <Sequence>
+            <Parallel>
+                <MoveToSlot slot="{slot}"/>
+                <ResetLoopFormer/>
+                <MoveShuttleToWireLoadPosition/>
+            </Parallel>
+            <CloseWireDrive/>
+        </Sequence>
+    </BehaviorTree>
+
+    <BehaviorTree ID="WireCutter">
+        <Sequence>
+            <CloseShuttleGrippers/>
+            <Parallel>
+                <OpenLoopGripper/>
+                <Sequence>
+                    <MoveLeftShuttleGripperForward/>
+                    <CutWire length="{0.0}"/>
+                    <MoveLeftShuttleGripperBackward/>
+                </Sequence>
+            </Parallel>
+        </Sequence>
+    </BehaviorTree>
+</root>

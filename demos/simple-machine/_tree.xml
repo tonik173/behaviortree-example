@@ -1,0 +1,29 @@
+<root BTCPP_format="4">
+
+    <BehaviorTree ID="MainTree">
+
+        <Sequence>
+            <Fallback name="Wire loader">
+                <IsWireLoaded/>
+                <LoadWire/>
+            </Fallback>
+
+            <Fallback name="Wire drawer">
+                <IsWireDrawn/>
+                <DrawWire/>
+            </Fallback>
+
+            <Fallback name="Wire cutter">
+                <IsWireCut/>
+                <CutWire/>
+            </Fallback>
+            
+            <Fallback name="Wire stripper">
+                <IsWireStripped/>
+                <StripWire/>
+            </Fallback>
+        </Sequence>
+
+    </BehaviorTree>
+
+</root>
