@@ -1,6 +1,6 @@
 # BehaviorTree.CPP examples
 
-This example run a simple wire cut and strip machine.
+This example runs a simple wire cut and strip machine.
 
 ![cut and strip illustration](cut-and-strip.drawio.svg)
 
