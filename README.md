@@ -1,6 +1,6 @@
 # BehaviorTree.CPP examples
 
-This example runs a simple wire cut and strip machine.
+The examples in this repository run a simple wire cut and strip machine, using the [BehaviorTree.CPP](https://github.com/BehaviorTree/BehaviorTree.CPP) library.
 
 ![cut and strip illustration](cut-and-strip.drawio.svg)
 
