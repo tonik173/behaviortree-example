@@ -15,6 +15,8 @@ The easiest way to play with the example is to run it with Docker. The docker fi
 docker compose build
 docker compose up -d
 docker exec -itd btcpp-env terminator
+# without an X-Window server just run
+docker exec -it btcpp-env bash
 ```
 
 If this works, the `Terminator` terminal app launches.
