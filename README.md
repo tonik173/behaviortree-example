@@ -2,7 +2,7 @@
 
 The examples in this repository run a simple wire cut and strip machine, using the [BehaviorTree.CPP](https://github.com/BehaviorTree/BehaviorTree.CPP) library.
 
-![cut and strip illustration](cut-and-strip.drawio.svg)
+![cut and strip illustration](img/cut-and-strip.drawio.svg)
 
 ## Using docker
 
@@ -48,6 +48,14 @@ The docker image contains already the downloaded installer file in the home dire
 Launch the installer and follow the instructions.
 
 Note: Using WSL2, I wasn't able to connect Groot2 with the tree execution app.
+
+### Simple Machine
+
+![cut and strip with Groot2](img/cut-strip.svg)
+
+### Reactive Machine
+
+![reactive machine with Groot2](img/reactive.svg)
 
 ## More infos
 
