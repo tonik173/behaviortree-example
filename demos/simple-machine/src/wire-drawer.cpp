@@ -2,7 +2,6 @@
 #include "wire-drawer.hpp"
 
 using namespace std::chrono_literals;
-using BT::NodeStatus;
 
 void WireDrawer::registerNodes(BT::BehaviorTreeFactory &factory)
 {
@@ -10,17 +9,17 @@ void WireDrawer::registerNodes(BT::BehaviorTreeFactory &factory)
     factory.registerSimpleAction("DrawWire", std::bind(&WireDrawer::drawWire, this));
 }
 
-NodeStatus WireDrawer::isWireDrawn()
+BT::NodeStatus WireDrawer::isWireDrawn()
 {
     std::this_thread::sleep_for(200ms);
     std::cout << "wire drawn: " << YES_NO(_isWireDrawn) << std::endl;
-    return _isWireDrawn ? NodeStatus::SUCCESS : NodeStatus::FAILURE;
+    return _isWireDrawn ? BT::NodeStatus::SUCCESS : BT::NodeStatus::FAILURE;
 }
 
-NodeStatus WireDrawer::drawWire()
+BT::NodeStatus WireDrawer::drawWire()
 {
     std::cout << "drawing wire..." << std::endl;
     std::this_thread::sleep_for(3s);
     _isWireDrawn = true;
-    return _isWireDrawn ? NodeStatus::SUCCESS : NodeStatus::FAILURE;
+    return _isWireDrawn ? BT::NodeStatus::SUCCESS : BT::NodeStatus::FAILURE;
 }

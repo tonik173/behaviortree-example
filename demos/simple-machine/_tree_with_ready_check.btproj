@@ -3,32 +3,16 @@
     <include path="_tree_with_ready_check.xml"/>
     <!-- Description of Node Models (used by Groot) -->
     <TreeNodesModel>
-        <Action ID="CloseShuttleGrippers" editable="true"/>
-        <Action ID="CloseWireDrive" editable="true"/>
-        <Action ID="CutWire" editable="true">
-            <output_port name="length"/>
-        </Action>
-        <Action ID="DrawWire" editable="true">
-            <input_port name="slot"/>
-        </Action>
+        <Action ID="CutWire" editable="true"/>
+        <Action ID="DrawWire" editable="true"/>
+        <Action ID="LoadWire" editable="true"/>
+        <Action ID="StripWire" editable="true"/>
         <Action ID="FixIssue" editable="true"/>
         <Condition ID="IsMachineReady" editable="true"/>
         <Condition ID="IsOrderReady" editable="true"/>
         <Condition ID="IsWireCut" editable="true"/>
         <Condition ID="IsWireDrawn" editable="true"/>
-        <Condition ID="IsWireEndStripped" editable="true"/>
         <Condition ID="IsWireLoaded" editable="true"/>
         <Condition ID="IsWireStripped" editable="true"/>
-        <Action ID="LoadWire" editable="true"/>
-        <Action ID="MoveLeftShuttleGripperBackward" editable="true"/>
-        <Action ID="MoveLeftShuttleGripperForward" editable="true"/>
-        <Action ID="MoveShuttleToWireLoadPosition" editable="true"/>
-        <Action ID="MoveToSlot" editable="true">
-            <input_port name="slot"/>
-        </Action>
-        <Action ID="OpenLoopGripper" editable="true"/>
-        <Action ID="ResetLoopFormer" editable="true"/>
-        <Action ID="StripWire" editable="true"/>
-        <Action ID="StripWireEnd" editable="true"/>
     </TreeNodesModel>
 </root>

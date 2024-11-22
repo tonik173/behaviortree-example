@@ -8,7 +8,7 @@ The examples in this repository run a simple wire cut and strip machine, using t
 
 The easiest way to play with the example is to run it with Docker. The docker file creates the latest Ubuntu image, installs a few development tools and clones and compiles [BehaviorTree.CPP](https://github.com/BehaviorTree/BehaviorTree.CPP).
 
-1. Modifiy the `.env` file to match your environment. `HOST_ROOT_PATH` refers to the location of the clone of this repository.
+1. Modify the `.env` file to match your environment. `HOST_ROOT_PATH` refers to the location of the clone of this repository.
 2. Run docker
 
 ```sh
@@ -19,7 +19,7 @@ docker exec -itd btcpp-env terminator
 docker exec -it btcpp-env bash
 ```
 
-If this works, the `Terminator` terminal app launches.
+If this works, the `Terminator` (or the bash) terminal app launches.
 
 ### Compile examples (within docker)
 
@@ -27,7 +27,8 @@ If this works, the `Terminator` terminal app launches.
 # change directory to demo, where demo is the name of the example
 cd behavior-tree-cpp/<demo>  
 mkdir build
-# On WSL, I had to run the cmake command the first time with <sudo>. Someone knows how to fix this?
+# On WSL, I had to run the cmake command the first time with <sudo> and then again without <sudo>. 
+# Someone knows how to fix this?
 cmake -S ./src -B ./build    
 cd build
 make
